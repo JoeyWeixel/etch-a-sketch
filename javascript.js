@@ -9,15 +9,15 @@ function createGrid(n){
             square.classList.add('square');
             row.appendChild(square);
         }
-
         grid.appendChild(row);
     }
-    let width = grid.width;
-    let squareSize = width/n;
-
-
-
 }
 
+function hover(e){
+    this.classList.add('hover');
+}
 
 createGrid(16);
+
+const squares = document.querySelectorAll('.square');
+squares.forEach(square => square.addEventListener('mouseover', hover));
