@@ -1,9 +1,23 @@
 function createGrid(n){
-    let container = document.querySelector('.grid');
-    for(let i=0; i<n*n; i++){
-        let square = document.createElement('div');
+    let grid = document.querySelector('.grid');
+    for(let i=0; i<n; i++){
+        let row = document.createElement('div');
         //square.setAttribute('id', 'square' + i)
-        square.classList.add('square');
-        container.appendChild(square);
+        row.classList.add('row');
+        for(let j=0; j<n; j++){
+            let square = document.createElement('div');
+            square.classList.add('square');
+            row.appendChild(square);
+        }
+
+        grid.appendChild(row);
     }
+    let width = grid.width;
+    let squareSize = width/n;
+
+
+
 }
+
+
+createGrid(16);
